@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfreshers_training=self.webpackChunkfreshers_training||[]).push([[624],{4624:function(n,e,s){s.r(e);var r=s(1889),i=s(184);e.default=function(){return(0,i.jsx)(i.Fragment,{children:(0,i.jsx)(r.ZP,{mt:2,container:!0,spacing:2,children:"Hello FinalAssessment"})})}}}]);
+//# sourceMappingURL=624.b7503486.chunk.js.map
