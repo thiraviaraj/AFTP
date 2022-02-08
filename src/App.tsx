@@ -10,7 +10,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
 function App() {
   useEffect(()=>{
-    document.title = 'AccionLabs Freshers Training Plan';
+    document.title = 'AccionLabs Freshers Training Program';
   }, [])
   const theme = createTheme({
     palette: {

@@ -7,7 +7,7 @@ import {
 const StartPage = () => {
     const copyUrl = (item: string) => {
         const el = document.createElement('input');
-        el.value = window.origin + item;
+        el.value = window.origin + '/AFTP/#' + item;
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');

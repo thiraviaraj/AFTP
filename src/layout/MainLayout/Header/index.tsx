@@ -13,7 +13,6 @@ import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { Grid, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
-import {Link as LinkBar} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -24,7 +23,6 @@ import {DataArray, Cloud, Chat, AccountTree, DesignServices} from '@mui/icons-ma
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import GrainIcon from '@mui/icons-material/Grain';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Footer from '../Footer';
 
@@ -116,8 +114,8 @@ export default function Header() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleMenuClose}>TODO: In progress</MenuItem>
+            {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
         </Menu>
     );
 
@@ -139,37 +137,17 @@ export default function Header() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
-                <p>Messages</p>
-            </MenuItem>
-            <MenuItem>
                 <IconButton
                     size="large"
                     title="Timeline"
                     aria-label="Timeline"
                     color="inherit"
                 >
-                    <Badge badgeContent={17} color="error">
+                    <Badge color="error">
                         <Timeline />
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
-            </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
-                <IconButton
-                    size="large"
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Profile</p>
+                <p>Timeline</p>
             </MenuItem>
         </Menu>
     );
@@ -199,7 +177,7 @@ export default function Header() {
                             component="div"
                             sx={{ display: { xs: 'none', sm: 'block' } }}
                         >
-                            <Link className='noLinkStyle' to="/StartPage">Accion Freshers Training</Link>
+                            <Link className='noLinkStyle' to="/StartPage">Accion Freshers Training Program</Link>
                         </Typography>
                         <Search>
                             <SearchIconWrapper>
@@ -297,13 +275,11 @@ export default function Header() {
                                 </ListItemIcon>
                                 }
                                 { item.link &&
-                                <LinkBar
-          color="inherit"
-          underline="none"
-          href={item.link}
+                                <Link className='noLinkStyle'
+          to={item.link}
         >
                                 <ListItemText primary={item.title} />
-                                </LinkBar>
+                                </Link>
                                 }
                             </ListItem>
                         ))}
@@ -325,24 +301,21 @@ export default function Header() {
             <Grid mt={2}>
             <Breadcrumbs aria-label="breadcrumb">
             
-        <LinkBar
-          underline="hover"
-          sx={{ display: 'flex', alignItems: 'center' }}
-          color="inherit"
-          href="/StartPage"
+        <Link
+        className='noLinkStyle'
+          to="/StartPage"
         >
           <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
           Home
-        </LinkBar>
-        <LinkBar
-          underline="hover"
-          sx={{ display: 'flex', alignItems: 'center' }}
-          color="inherit"
-          href="#"
+        </Link>
+        {location.pathname.length > 1 && <Link
+        className='noLinkStyle'
+          to="#"
         >
           <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
           {location.pathname.substring(1, location.pathname.length)}
-        </LinkBar>
+        </Link>}
+        
        
       </Breadcrumbs>
       </Grid>

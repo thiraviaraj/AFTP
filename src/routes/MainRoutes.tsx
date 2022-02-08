@@ -23,6 +23,10 @@ const MainRoutes = {
     element: <Header />,
     children: [
         {
+            path: '/',
+            element: <StartPage />
+        },
+        {
             path: '/startpage',
             element: <StartPage />
         },
